@@ -3,7 +3,8 @@ package material.maps;
 /**
  * @param <K> The hey
  * @param <V> The stored value
- */
+ * @author danie
+*/
 public class HashTableMapLP<K, V> extends AbstractHashTableMap<K, V> {
 
     public HashTableMapLP(int size) {

@@ -18,6 +18,9 @@ import java.lang.Iterable;
  * @author A. Duarte, J. Vélez, J. Sánchez-Oro
  * @param <K> The key
  * @param <V> The stored value
+ * 
+ * Modification made by danie
+ * 
  */
 public class HashTableMapSC<K, V> implements Map<K, V> {
 

@@ -9,6 +9,11 @@ import material.tree.BreadthFirstTreeIterator;
 import material.tree.binarytree.BinaryTree;
 import material.tree.binarytree.LinkedBinaryTree;
 
+/**
+*
+* @author danie
+*/
+
 public class BinaryTreeUtils<E> {
 	
 	private BinaryTree<E> tree;

@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  *
- * @author mtgonzal
+ * @author danie
  */
 public class TreeSizeCalculator {
     /**

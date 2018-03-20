@@ -14,7 +14,7 @@ import material.tree.narytree.LinkedTree;
 
 /**
  *
- * @author jvelez
+ * @author danie
  * @param <T>
  */
 public class LeafIterator <T> implements Iterator<Position<T>> {

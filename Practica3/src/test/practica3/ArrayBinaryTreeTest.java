@@ -436,7 +436,7 @@ public class ArrayBinaryTreeTest {
     /**
      * Test of subTree method, of class LinkedBinaryTree.
      */
-    @Test
+    /*@Test
     public void testSubTree() {
     	ArrayBinaryTree<String> t = new ArrayBinaryTree<>();
         Position<String> p = t.addRoot("+");
@@ -449,6 +449,6 @@ public class ArrayBinaryTreeTest {
         assertEquals(t2.left(t2.root()), n3);
         assertEquals(t2.right(t2.root()), n5);
         
-    }
+    }*/
     
 }

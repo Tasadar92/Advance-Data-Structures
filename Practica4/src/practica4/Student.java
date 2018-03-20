@@ -1,5 +1,10 @@
 package practica4;
 
+/**
+*
+* @author danie
+*/
+
 public class Student {
 	private String name;
 	private String record;

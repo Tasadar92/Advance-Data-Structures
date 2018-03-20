@@ -10,6 +10,11 @@ import material.tree.Tree;
 import material.tree.narytree.LinkedTree;
 import material.tree.narytree.NAryTree;
 
+/**
+*
+* @author danie
+*/
+
 public class LCRSTree<E> implements NAryTree<E> {
 	private LCRSTreeNode<E> root;
 	

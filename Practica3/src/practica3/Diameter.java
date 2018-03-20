@@ -6,6 +6,11 @@ import material.Position;
 import material.tree.binarytree.BinaryTree;
 import material.tree.binarytree.LinkedBinaryTree;
 
+/**
+*
+* @author danie
+*/
+
 public class Diameter<E> {
 	
 	public int evalDiameter(BinaryTree<Integer> tree, Position<Integer> v1, Position<Integer> v2) {

@@ -20,6 +20,11 @@ import material.tree.binarytree.BinaryTree;
 import material.tree.binarytree.InorderBinaryTreeIterator;
 import material.tree.binarytree.LinkedBinaryTree;
 
+/**
+*
+* @author danie
+*/
+
 public class ArrayBinaryTree<E> implements BinaryTree<E> {
 	private int size = 0;
 	private int cap = 200;
@@ -440,18 +445,28 @@ public class ArrayBinaryTree<E> implements BinaryTree<E> {
 		
 		if(aux != null){
 			nodeQueue.add(aux);
-					
+			
+			aux = nodeQueue.pollFirst();
+			t.tree[1] = aux;	
+			if(aux != null){
+				nodeQueue.add(this.tree[aux.getIndex()*2]);
+				nodeQueue.add(this.tree[(aux.getIndex()*2)+1]);
+			}
+			
 			while(!(nodeQueue.isEmpty())){
 				aux = nodeQueue.pollFirst();
 				if(aux != null){
 					nodeQueue.add(this.tree[aux.getIndex()*2]);
 					nodeQueue.add(this.tree[(aux.getIndex()*2)+1]);
+					
+					if(aux.getIndex() % 2 == 0)
+						t.tree[aux.getIndex()] = aux;
+					else
+						t.tree[aux.getIndex()] = aux;
 			
-					t.tree[i] = aux;
-			
-					i++;
-				}else{
-					i++;
+					//i++;
+				//}else{
+					//i++;
 				}
 			}
 		/*if(checkPosition(v) != null){

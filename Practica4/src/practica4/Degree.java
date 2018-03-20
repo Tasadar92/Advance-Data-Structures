@@ -3,6 +3,11 @@ package practica4;
 import material.maps.HashTableMapDH;
 import material.maps.HashTableMapSC;
 
+/**
+*
+* @author danie
+*/
+
 public class Degree<K,Student> {
 	private String id;
 	private String name;
