@@ -7,6 +7,11 @@ import material.maps.Entry;
 import material.maps.HashTableMapLP;
 import material.maps.Map;
 
+/**
+*
+* @author danie
+*/
+
 public class URJC{
 	private HashTableMapLP<Degree, ArrayList<Student>> map = new HashTableMapLP<>();
 	
@@ -26,7 +31,7 @@ public class URJC{
 				
 				if(l2.size() == 0){
 					l2.add(student);
-					map.put(degree, l2);
+					map.put(degree, l2); 
 				}else{
 					
 					for(Student st: l2){
