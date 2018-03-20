@@ -201,25 +201,57 @@ abstract public class AbstractTreeOrderedDict<K, V> implements
     	Iterable<Position<Entry<K, V>>> l1;
     	ArrayList<Entry<K, V>> l2 = new ArrayList();
     	
-    	checkKey(minkey);
-    	checkKey(maxkey);
-    	    	
-    	Entry<K, V> entry1 = this.find(minkey);
-    	Entry<K, V> entry2 = this.find(maxkey);
+    	//checkKey(minkey);
+    	//checkKey(maxkey);
     	
-    	DictEntry<K, V> dic1 = checkEntry(entry1);
-    	DictEntry<K, V> dic2 = checkEntry(entry2);
-    	DictEntry<K, V> aux = null;
+    	if(this.find(minkey) != null && this.find(maxkey) != null){
+    		Entry<K, V> entry1 = this.find(minkey);
+    		Entry<K, V> entry2 = this.find(maxkey);
     	
-    	l1 = this.bsTree.successors(dic1.pos);
-    	l2.add(this.find(dic1.key));
+    		DictEntry<K, V> dic1 = checkEntry(entry1);
+    		DictEntry<K, V> dic2 = checkEntry(entry2);
+    		DictEntry<K, V> aux = null;
     	
-    	for(Position<Entry<K,V>> pos: l1){
-    		aux = checkEntry(pos.getElement());
-    		int i1 = dic1.compareTo(aux);
-    		int i2 = dic2.compareTo(aux);
-    		if(i1 < 0 && i2 >= 0)
-    			l2.add(this.find(aux.key));
+    		l1 = this.bsTree.successors(dic1.pos);
+    		l2.add(this.find(dic1.key));
+    	
+    		for(Position<Entry<K,V>> pos: l1){
+    			aux = checkEntry(pos.getElement());
+    			int i1 = dic1.compareTo(aux);
+    			int i2 = dic2.compareTo(aux);
+    			if(i1 < 0 && i2 >= 0)
+    				l2.add(this.find(aux.key));
+    		}
+    	}else if(this.find(minkey) == null && this.find(maxkey) != null){
+    		
+    		Entry<K, V> entry2 = this.find(maxkey);
+
+    		DictEntry<K, V> dic2 = checkEntry(entry2);
+    		DictEntry<K, V> aux = null;
+    	
+    		l1 = this.bsTree.predecessors(dic2.pos);
+    	
+    		for(Position<Entry<K,V>> pos: l1){
+    			aux = checkEntry(pos.getElement());
+    			int i2 = dic2.compareTo(aux);
+    			if(i2 >= 0)
+    				l2.add(this.find(aux.key));
+    		}
+    	}else if(this.find(minkey) != null && this.find(maxkey) == null){
+    		Entry<K, V> entry1 = this.find(minkey);
+    	
+    		DictEntry<K, V> dic1 = checkEntry(entry1);
+    		DictEntry<K, V> aux = null;
+    	
+    		l1 = this.bsTree.successors(dic1.pos);
+    		l2.add(this.find(dic1.key));
+    	
+    		for(Position<Entry<K,V>> pos: l1){
+    			aux = checkEntry(pos.getElement());
+    			int i1 = dic1.compareTo(aux);
+    			if(i1 < 0)
+    				l2.add(this.find(aux.key));
+    		}
     	}
     	return l2;
     }
